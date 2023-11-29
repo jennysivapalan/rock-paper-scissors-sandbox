@@ -1,5 +1,5 @@
 const getRandomMove = () => {
-  const moves = ["rock", "paper", "scissors"];
+  const moves = ["rock", "paper", "scissors", "lizard", "spock"];
   const randomIndex = Math.floor(Math.random() * moves.length);
   return moves[randomIndex];
 };
@@ -11,8 +11,15 @@ const getOutcome = (moveOne, moveTwo) => {
 
   if (
     (moveOne === "scissors" && moveTwo === "paper") ||
+    (moveOne === "scissors" && moveTwo === "lizard") ||
     (moveOne === "rock" && moveTwo === "scissors") ||
-    (moveOne === "paper" && moveTwo === "rock")
+    (moveOne === "rock" && moveTwo === "lizard") ||
+    (moveOne === "paper" && moveTwo === "rock") ||
+    (moveOne === "paper" && moveTwo === "spock") ||
+    (moveOne === "lizard" && moveTwo === "paper") ||
+    (moveOne === "lizard" && moveTwo === "spock") ||
+    (moveOne === "spock" && moveTwo === "rock") ||
+    (moveOne === "spock" && moveTwo === "scissors")
   ) {
     return "Player One wins!";
   }
